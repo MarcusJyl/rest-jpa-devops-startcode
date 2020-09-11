@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div {
+            background-color: red;
+        }
+    </style>
+    </head>
+    <body>
+        
+        <div id ="1">første linkje</div>
+        <div id ="2">anden linkje</div>
+        <div id ="3">tredje linkje</div>
+        <button id="btn" type="button">Click Me!</button>
+    </body>
+    <script>
+        function changecolor(){
+            document.getElementById("1").style.backgroundColor = "green"
+            document.getElementById("2").style.backgroundColor = "yellow"
+            document.getElementById("3").style.backgroundColor = "blue"
+        }
+        
+        document.getElementById("btn").addEventListener("click",(event)=>{
+            event.preventDefault();
+            changecolor();
+        })
+    </script>
+</html>

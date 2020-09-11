@@ -1,0 +1,54 @@
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <ul id="liste">
+
+            </ul>
+        </div>
+        <div id="form" >
+            <input id="text" type="text">
+            <input id="btn" type="button" value="Submit">
+        </div>
+        <div>
+            <input id="rf" type="button" value="remove first">
+            <input id="rl" type="button" value="remove last">
+        </div>
+
+    </body>
+    <script>
+        let navne = ["Lars", "Peter", "Jan", "Bo", "Frederik"]
+
+
+        document.getElementById("btn").addEventListener("click", addName)
+        document.getElementById("rf").addEventListener("click", removef)
+        document.getElementById("rl").addEventListener("click", removel)
+
+        function addName() {
+            let navn = document.getElementById("text").value
+            navne.unshift(navn)
+            liste.innerHTML = html(Array.from(navne))
+        }
+
+            function removef() {
+                navne.shift()
+                liste.innerHTML = html(Array.from(navne))
+                }
+                function removel() {
+                    navne.pop()
+                    liste.innerHTML = html(Array.from(navne))
+                    }
+                    function html(array) {
+                        let tempName = array.map(n => "<li>" + n + "</li>")
+                        return tempName.join("");
+                    }
+
+                    let liste = document.getElementById("liste");
+                    liste.innerHTML = html(navne)
+    </script>
+</html>

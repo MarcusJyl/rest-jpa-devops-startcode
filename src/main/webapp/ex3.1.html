@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <table id="table" class="table"></table>
+        <input id="input">
+        <input id="btn" type="submit" value="less than">
+    </body>
+    <script>
+        var cars = [
+            {id: 1, year: 1997, make: 'Ford', model: 'E350', price: 3000},
+            {id: 2, year: 1999, make: 'Chevy', model: 'Venture', price: 4900},
+            {id: 3, year: 2000, make: 'Chevy', model: 'Venture', price: 5000},
+            {id: 4, year: 1996, make: 'Jeep', model: 'Grand Cherokee', price: 4799},
+            {id: 5, year: 2005, make: 'Volvo', model: 'V70', price: 44799}
+        ];
+        
+        document.getElementById("table").innerHTML = tablemaker(cars)
+        
+        document.getElementById("btn").addEventListener("click", (evt)=> {
+            evt.preventDefault()
+            let filtreret = cars.filter(n => n.price < document.getElementById("input").value)
+            document.getElementById("table").innerHTML = tablemaker(filtreret)
+        })
+        
+        
+        function tablemaker(array){
+            let carArray = array.map(n => "<tr><th>" + n.id + "</th><th>" + n.year + "</th><th>" + n.make + "</th><th>" + n.model + "</th><th>" + n.price + "</th></tr>")
+            return "<tr><th>ID</th><th>YEAR</th><th>MAKE</th><th>MODEL</th><th>PRICE</th></tr>" + carArray.join("");
+        }
+        
+    </script>
+</html>

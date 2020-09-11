@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .mydiv {width: 25px; height: 25px;background-color:yellow; margin:1px;}
+        </style>
+    </head>
+    <body>
+        <div id="outer">
+            <div id="1" class="mydiv"></div>
+            <div id="2" class="mydiv"></div>
+            <div id="3" class="mydiv"></div>
+            <div id="4" class="mydiv"></div>
+            <div id="5" class="mydiv"></div>
+            <div id="6" class="mydiv"></div>
+            <div id="7" class="mydiv"></div>
+            <div id="8" class="mydiv"></div>
+            <div id="9" class="mydiv"></div>
+            <div id="10" class="mydiv"></div>
+            <div id="11" class="mydiv"></div>
+        </div>
+        <p id="paragraf"></p>
+
+
+
+    </body>
+    <script>
+       document.getElementById("outer").addEventListener("click",(event) => {
+           event.preventDefault()
+           let target= event.target
+           document.getElementById("paragraf").innerHTML="Hello from div " + target.id
+       })
+
+    </script>
+</html>
